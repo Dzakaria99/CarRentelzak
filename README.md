@@ -1,264 +1,335 @@
-# Car Rental Booking System (MERN Stack)
+# 🚗 DriveNow - Car Rental Booking System
 
-A fully functional, production‑ready **Car Rental Booking Website** built using the **MERN Stack (MongoDB, Express.js, React.js, Node.js)** with **ImageKit** integration for media storage.
+> A modern, full-stack Car Rental Management Platform built with the MERN Stack by **Zakaria Douami**.
 
----
-
-## 🚀 Features
-
-### 👤 **User Features**
-
-* User Registration & Login (JWT‑based authentication)
-* Browse cars with filters
-* Select pickup location & date
-* View car details
-* Make a booking
-* View "My Bookings" page
-
-### 🛠️ **Admin Features**
-
-* Secure Admin Login
-* Add new cars
-* Manage all bookings
-* Manage car inventory including images
-
-### 🖼️ **Image Handling**
-
-* Image upload handled via **ImageKit**
-* Auto optimization, fast delivery
-
-### 🌐 **Fully Deployed Application**
-
-* Frontend deployed (e.g., on Vercel or Netlify)
-* Backend deployed (e.g., on Render or Railway)
-* Connected to MongoDB Atlas
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
+![Node.js](https://img.shields.io/badge/Node.js-Express-green?logo=node.js)
+![MongoDB](https://img.shields.io/badge/MongoDB-Database-green?logo=mongodb)
+![JWT](https://img.shields.io/badge/Auth-JWT-orange)
 
 ---
 
-## 🏗️ Tech Stack
+# 📌 Overview
 
-### **Frontend**
+DriveNow is a complete Car Rental Booking Platform designed for rental agencies. It allows customers to search and reserve vehicles online while providing administrators with a powerful dashboard to manage cars, bookings, and customers.
 
-* React.js
-* React Router
-* Axios
-* Context API
-* CSS / Tailwind (optional)
-
-### **Backend**
-
-* Node.js
-* Express.js
-* MongoDB & Mongoose
-* JWT Authentication
-* ImageKit SDK
-
-### **Deployment**
-
-* Frontend → Vercel / Netlify
-* Backend → Render / Railway / VPS
-* Database → MongoDB Atlas
-* Media → ImageKit
+The application is built using the **MERN Stack** with secure authentication, cloud image storage, and a responsive user interface.
 
 ---
 
-## 📁 Folder Structure
+# ✨ Features
+
+## 👤 Customer
+
+- Browse available vehicles
+- Search by pickup location
+- Filter by brand, price, category
+- View detailed car information
+- Select pickup & return dates
+- Instant booking
+- View booking history
+- Responsive mobile-friendly interface
+
+---
+
+## 🔐 Authentication
+
+- JWT Authentication
+- Secure Login
+- User Registration
+- Password Encryption
+- Protected Routes
+
+---
+
+## 👨‍💼 Admin Dashboard
+
+- Secure Admin Login
+- Add/Edit/Delete Cars
+- Upload Multiple Images
+- Manage Bookings
+- Manage Fleet
+- Booking Status Management
+- Dashboard Statistics
+
+---
+
+## 🚘 Vehicle Management
+
+- Multiple Pickup Locations
+- Car Categories
+- Daily Pricing
+- Availability Status
+- Transmission
+- Fuel Type
+- Seats
+- Air Conditioning
+- Car Images
+
+---
+
+## 📅 Booking System
+
+- Real-time Availability
+- Pickup & Return Date
+- Booking Confirmation
+- Booking Status
+- Price Calculation
+- Reservation History
+
+---
+
+## ☁️ Media Storage
+
+Powered by **ImageKit**
+
+- Fast CDN
+- Automatic Optimization
+- Secure Upload
+- Image Compression
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- React.js
+- React Router
+- Axios
+- Context API
+- Tailwind CSS
+- Vite
+
+---
+
+## Backend
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+- ImageKit SDK
+- Bcrypt
+
+---
+
+## Database
+
+- MongoDB Atlas
+
+---
+
+## Deployment
+
+- Frontend → Vercel
+- Backend → Render
+- Database → MongoDB Atlas
+- Images → ImageKit
+
+---
+
+# 📂 Project Structure
 
 ```
-car-rental-app/
+car-rental/
 │
-├── client/             # React Frontend
+├── client/
 │   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── context/
-│   │   ├── assets/
-│   │   ├── App.js
-│   │   ├── index.js
-│   └── package.json
+│   ├── assets/
+│   ├── components/
+│   ├── pages/
+│   ├── context/
+│   └── App.jsx
 │
-├── server/             # Node Backend
+├── server/
 │   ├── controllers/
-│   ├── routes/
-│   ├── models/
 │   ├── middleware/
-│   ├── .env
-│   ├── index.js
-│   └── package.json
+│   ├── models/
+│   ├── routes/
+│   ├── config/
+│   └── server.js
 │
 └── README.md
 ```
 
 ---
 
-## ⚙️ Installation & Setup
+# ⚙️ Installation
 
-### 🔧 Prerequisites
+## Clone Repository
 
-Make sure you have:
+```bash
+git clone https://github.com/yourusername/car-rental.git
 
-* Node.js installed
-* MongoDB Atlas account
-* ImageKit account
+cd car-rental
+```
 
 ---
 
-## 🖥️ Local Setup
-
-### **1. Clone the Repository**
-
-```bash
-https://github.com/PratikDevelops/CarRental-fullstack.git
-cd CarRental-fullstack
-```
-
-### **2. Install Frontend Dependencies**
+## Install Frontend
 
 ```bash
 cd client
-npm install
-```
 
-### **3. Install Backend Dependencies**
-
-```bash
-cd ../server
 npm install
 ```
 
 ---
 
-## 🔑 Environment Variables
+## Install Backend
 
-Create a `.env` file in the **server** folder and add:
+```bash
+cd ../server
 
+npm install
 ```
-MONGO_URI=your_mongo_atlas_url
-JWT_SECRET=your_jwt_secret
+
+---
+
+# 🔑 Environment Variables
+
+Create a `.env` file inside the server directory.
+
+```env
+PORT=4000
+
+MONGO_URI=your_mongodb_uri
+
+JWT_SECRET=your_secret_key
+
 IMAGEKIT_PUBLIC_KEY=
+
 IMAGEKIT_PRIVATE_KEY=
+
 IMAGEKIT_URL_ENDPOINT=
 ```
 
 ---
 
-## ▶️ Run the App
+# ▶️ Running the Project
 
-### **Start Backend**
+Backend
 
 ```bash
 cd server
-npm start
-```
 
-### **Start Frontend**
-
-```bash
-cd client
 npm run dev
 ```
 
-Your project will be live at:
-
-* Frontend: [http://localhost:5173](http://localhost:5173)
-* Backend: [http://localhost:4000](http://localhost:4000)
-
----
-
-## 📦 Build for Production
-
-### Frontend Build
+Frontend
 
 ```bash
 cd client
-npm run build
+
+npm run dev
 ```
 
-This generates a production-ready build inside `/dist`.
+---
+
+# 🌐 Default URLs
+
+Frontend
+
+```
+http://localhost:5173
+```
+
+Backend
+
+```
+http://localhost:4000
+```
 
 ---
 
-## ☁️ Deployment Steps
+# 📡 API Overview
 
-### **Frontend (Vercel / Netlify)**
+## Authentication
 
-1. Connect GitHub repo
-2. Select the `client` folder
-3. Build Command → `npm run build`
-4. Output Directory → `dist`
-
-### **Backend (Render / Railway)**
-
-1. Create new web service
-2. Use `server` folder
-3. Add environment variables
-4. Deploy
-
-### **ImageKit Setup**
-
-* Create a new ImageKit project
-* Copy API Keys to `.env`
-* Use `.upload()` method to upload car images
+| Method | Endpoint | Description |
+|---------|----------|------------|
+| POST | /api/auth/register | Register User |
+| POST | /api/auth/login | Login User |
 
 ---
 
-## 🔗 API Endpoints
+## Cars
 
-### **Auth Routes**
-
-| Method | Endpoint           | Description   |
-| ------ | ------------------ | ------------- |
-| POST   | /api/auth/register | Register user |
-| POST   | /api/auth/login    | Login user    |
-
-### **Car Routes**
-
-| Method | Endpoint      | Description     |
-| ------ | ------------- | --------------- |
-| GET    | /api/cars     | List all cars   |
-| GET    | /api/cars/:id | Get car details |
-| POST   | /api/cars     | Add car (Admin) |
-
-### **Booking Routes**
-
-| Method | Endpoint         | Description       |
-| ------ | ---------------- | ----------------- |
-| POST   | /api/bookings    | Create booking    |
-| GET    | /api/bookings/me | Get user bookings |
+| Method | Endpoint |
+|---------|----------|
+| GET | /api/cars |
+| GET | /api/cars/:id |
+| POST | /api/cars |
+| PUT | /api/cars/:id |
+| DELETE | /api/cars/:id |
 
 ---
 
+## Bookings
 
-
----
-
-## 🛡️ Authentication Flow
-
-* User logs in → Backend generates JWT
-* Frontend stores token in localStorage
-* Token added in every protected request header
-* Admin routes are protected using middleware
+| Method | Endpoint |
+|---------|----------|
+| POST | /api/bookings |
+| GET | /api/bookings/me |
+| GET | /api/admin/bookings |
+| PUT | /api/bookings/:id |
 
 ---
 
-## ✨ Bonus Features You Can Add
+# 🔒 Security
 
-* Payment gateway (Razorpay / Stripe)
-* Advanced car filters (price, brand, fuel type)
-* Reviews & ratings
-* Coupon/discount system
-* Admin analytics dashboard
-* OTP login
-
----
-
-
-## 📄 License
-
-This project is open source and free to use.
+- JWT Authentication
+- Password Hashing (bcrypt)
+- Protected Admin Routes
+- Secure Environment Variables
+- MongoDB Validation
 
 ---
 
-## 💬 Feedback & Support
+# 🚀 Future Improvements
 
-Feel free to fork the project, raise issues, or suggest improvements!
+- Stripe Payments
+- Email Notifications
+- Google Login
+- OTP Verification
+- Coupons & Discounts
+- Reviews & Ratings
+- Admin Analytics
+- Multi-language Support
+
+---
+
+# 👨‍💻 Developer
+
+## Zakaria Douami
+
+Full Stack Developer
+
+**Tech Stack**
+
+- React.js
+- Node.js
+- Express.js
+- MongoDB
+- JavaScript
+- REST APIs
+- Tailwind CSS
+
+---
+
+# 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+# ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
+
+---
+
+## Made with ❤️ by **Zakaria Douami**
