@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { getErrorMessage } from '../utils/apiError'
 
 const SA_TOKEN_KEY = 'sa_token'
-const API_BASE_URL = import.meta.env.VITE_BASE_URL || 'http://localhost:3000'
+const API_BASE_URL = import.meta.env.VITE_BASE_URL || 'https://carrentelzak.onrender.com'
 
 const SuperAdminContext = createContext(null)
 
