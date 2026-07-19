@@ -13,7 +13,7 @@ const STEPS = ['documents', 'payment', 'signature', 'done']
 
 /** Guest completion must not reuse the owner Bearer token */
 const guestApi = axios.create({
-  baseURL: import.meta.env.VITE_BASE_URL || 'http://localhost:3000',
+  baseURL: import.meta.env.VITE_BASE_URL || 'https://carrentelzak.onrender.com',
 })
 
 const StepPill = ({ index, label, active, done }) => (
