@@ -1,0 +1,39 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "server": "nodemon server.js",
+    "start": "node server.js",
+    "seed:admin": "node scripts/seedAdmin.js",
+    "seed:superadmin": "node scripts/seedSuperAdmin.js",
+    "license": "node scripts/manageLicense.js",
+    "license:status": "node scripts/manageLicense.js status",
+    "license:activate": "node scripts/manageLicense.js activate",
+    "license:extend": "node scripts/manageLicense.js extend",
+    "license:trial": "node scripts/manageLicense.js trial",
+    "license:expire": "node scripts/manageLicense.js expire",
+    "test:email": "node scripts/testEmail.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "imagekit": "^6.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.16.0",
+    "multer": "^2.0.1",
+    "nodemailer": "^6.10.1",
+    "pdfkit": "^0.17.1",
+    "stripe": "^18.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
