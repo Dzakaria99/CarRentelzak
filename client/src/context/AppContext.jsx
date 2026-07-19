@@ -4,7 +4,7 @@ import {toast} from 'react-hot-toast'
 import { useNavigate } from "react-router-dom";
 import { getErrorMessage } from '../utils/apiError';
 
-const API_BASE_URL = import.meta.env.VITE_BASE_URL || 'http://localhost:3000';
+const API_BASE_URL = import.meta.env.VITE_BASE_URL || 'https://carrentelzak.onrender.com';
 axios.defaults.baseURL = API_BASE_URL
 
 export const AppContext = createContext();
