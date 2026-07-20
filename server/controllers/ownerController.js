@@ -1,6 +1,6 @@
 import fs from 'fs';
 import mongoose from 'mongoose';
-import imagekit from "../configs/imageKit.js";
+
 import Booking from "../models/Booking.js";
 import Car from "../models/Car.js";
 import User from "../models/User.js";
@@ -18,23 +18,7 @@ import {
   normalizeLocations,
 } from "../utils/carLocations.js";
 
-const uploadToImageKit = async (imageFile, folder, width = '1280') => {
-  const fileBuffer = fs.readFileSync(imageFile.path);
-  const response = await imagekit.upload({
-    file: fileBuffer,
-    fileName: imageFile.originalname,
-    folder,
-  });
 
-  return imagekit.url({
-    path: response.filePath,
-    transformation: [
-      { width },
-      { quality: 'auto' },
-      { format: 'webp' },
-    ],
-  });
-};
 
 const assertOwnerCar = async (carId, ownerId) => {
   if (!mongoose.isValidObjectId(carId)) return null;
@@ -140,7 +124,7 @@ export const addCar = async (req, res) => {
     const fleetId = await ensureUniqueFleetId(_id, car.fleetId);
     await assertUniqueAssetFields(_id, { vin, licensePlate, fleetId });
 
-    const image = await uploadToImageKit(imageFile, '/cars');
+    
     cleanupUploadedFile(imageFile);
     imageFile = null;
 
@@ -291,7 +275,7 @@ export const updateCar = async (req, res) => {
     }
 
     if (imageFile) {
-      car.image = await uploadToImageKit(imageFile, '/cars');
+      
       cleanupUploadedFile(imageFile);
       imageFile = null;
     }
@@ -515,7 +499,7 @@ export const updateUserImage = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Image is required' });
     }
 
-    const image = await uploadToImageKit(imageFile, '/users', '400');
+    
     cleanupUploadedFile(imageFile);
     imageFile = null;
 
