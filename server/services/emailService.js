@@ -122,7 +122,14 @@ export const getTransporter = async ({ forceNew = false } = {}) => {
   lastVerifyError = null;
 
   try {
-    await transporter.verify();
+    console.log("SMTP CONFIG:", {
+  host,
+  port,
+  user,
+  secure,
+});
+
+await transporter.verify();
     verifiedOk = true;
     log("log", `SMTP transporter verified → ${host}:${port} as ${user}`);
   } catch (error) {
