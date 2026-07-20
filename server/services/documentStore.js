@@ -1,7 +1,6 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import imagekit from "../configs/imageKit.js";
 import { cleanupUploadedFile } from "../middleware/multer.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
