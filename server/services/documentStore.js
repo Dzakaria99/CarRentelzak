@@ -7,7 +7,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /**
  * Upload image to ImageKit when configured; otherwise store locally under /uploads.
- */
+ 
 export const storeDocumentImage = async (file, folder = "/booking-docs") => {
   if (!file?.path) throw new Error("No file provided");
 
@@ -32,7 +32,7 @@ export const storeDocumentImage = async (file, folder = "/booking-docs") => {
     } catch (error) {
       console.error("ImageKit document upload failed, falling back to local:", error.message);
     }
-  }
+  }  */
 
   const reservationFolder = path.join(__dirname, "..", "uploads", "documents", "files");
   if (!fs.existsSync(reservationFolder)) fs.mkdirSync(reservationFolder, { recursive: true });
